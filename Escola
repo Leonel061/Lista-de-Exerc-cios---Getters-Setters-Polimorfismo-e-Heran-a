@@ -1,4 +1,4 @@
-public class Escola {
+abstract class Escola {
     private String nome;
     private String endereco;
 
@@ -6,6 +6,8 @@ public class Escola {
         this.nome = nome;
         this.endereco = endereco;
     }
+
+    public abstract double calcularMensalidade();  // Método abstrato
 
     public String getNome() {
         return nome;
@@ -23,3 +25,40 @@ public class Escola {
         this.endereco = endereco;
     }
 }
+
+class Curso extends Escola {
+    private int cargaHoraria;
+
+    public Curso(String nome, String endereco, int cargaHoraria) {
+        super(nome, endereco);
+        this.cargaHoraria = cargaHoraria;
+    }
+
+    @Override
+    public double calcularMensalidade() {
+        return cargaHoraria * 15.0; // Exemplo de cálculo de mensalidade
+    }
+
+    public void exibirInformacoes() {
+        System.out.println("Curso: " + getNome());
+        System.out.println("Endereço: " + getEndereco());
+        System.out.println("Carga Horária: " + cargaHoraria + " horas.");
+    }
+}
+
+class CursoTecnico extends Curso {
+    public CursoTecnico(String nome, String endereco, int cargaHoraria) {
+        super(nome, endereco, cargaHoraria);
+    }
+
+    @Override
+    public double calcularMensalidade() {
+        return super.calcularMensalidade() + 100; // Acréscimo para curso técnico
+    }
+
+    @Override
+    public void exibirInformacoes() {
+        super.exibirInformacoes();
+    }
+}
+
