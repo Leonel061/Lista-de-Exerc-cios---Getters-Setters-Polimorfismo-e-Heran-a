@@ -1,0 +1,22 @@
+public class CursoTecnico extends Curso {
+    private String modalidade;
+
+    public CursoTecnico(String nome, String endereco, int cargaHoraria, String modalidade) {
+        super(nome, endereco, cargaHoraria);
+        this.modalidade = modalidade;
+    }
+
+    public String getModalidade() {
+        return modalidade;
+    }
+
+    public void setModalidade(String modalidade) {
+        this.modalidade = modalidade;
+    }
+
+    @Override
+    public void exibirInformacoes() {
+        super.exibirInformacoes();  // Chama o método da superclasse
+        System.out.println("Modalidade: " + modalidade);
+    }
+}
