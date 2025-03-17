@@ -1,0 +1,11 @@
+public class Main {
+    public static void main(String[] args) {
+      
+        Curso curso = new Curso("Curso de Programação Java", "Rua A, 123", 120);
+        curso.exibirInformacoes();
+
+      
+        CursoTecnico cursoTecnico = new CursoTecnico("Curso Técnico de TI", "Rua B, 456", 180, "Presencial");
+        cursoTecnico.exibirInformacoes();
+    }
+}
