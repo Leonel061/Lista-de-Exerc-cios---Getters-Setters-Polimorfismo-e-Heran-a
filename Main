@@ -1,11 +1,21 @@
-public class Main {
-    public static void main(String[] args) {
-      
-        Curso curso = new Curso("Curso de Programação Java", "Rua A, 123", 120);
-        curso.exibirInformacoes();
+package javaapplication253;
 
-      
-        CursoTecnico cursoTecnico = new CursoTecnico("Curso Técnico de TI", "Rua B, 456", 180, "Presencial");
-        cursoTecnico.exibirInformacoes();
+public class JavaApplication253 {
+
+    public static void main(String[] args) {
+  
+        
+        Escola minhaEscola = new Escola("Colégio São lucas", "R. Vinte e Cinco de Julho - vargas, 564");
+
+     
+        System.out.println("Nome da escola: " + minhaEscola.getNome());
+        System.out.println("Endereço da escola: " + minhaEscola.getEndereco());
+
+        minhaEscola.setNome("São lucas");
+        minhaEscola.setEndereco("Rua vinte e cinco de julho 564 - vargas ");
+
+        System.out.println("\nApós atualização:");
+        System.out.println("Nome da escola: " + minhaEscola.getNome());
+        System.out.println("Endereço da escola: " + minhaEscola.getEndereco());
     }
 }
