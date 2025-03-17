@@ -1,0 +1,50 @@
+interface Certificavel {
+    void emitirCertificado();
+}
+
+class Curso extends Escola implements Certificavel {
+    private int cargaHoraria;
+
+    public Curso(String nome, String endereco, int cargaHoraria) {
+        super(nome, endereco);
+        this.cargaHoraria = cargaHoraria;
+    }
+
+    @Override
+    public double calcularMensalidade() {
+        return cargaHoraria * 15.0; // Exemplo de cálculo
+    }
+
+    @Override
+    public void exibirInformacoes() {
+        System.out.println("Curso: " + getNome());
+        System.out.println("Endereço: " + getEndereco());
+        System.out.println("Carga Horária: " + cargaHoraria + " horas.");
+    }
+
+    @Override
+    public void emitirCertificado() {
+        System.out.println("Certificado de Conclusão do Curso de " + getNome());
+    }
+}
+
+class CursoTecnico extends Curso implements Certificavel {
+    public CursoTecnico(String nome, String endereco, int cargaHoraria) {
+        super(nome, endereco, cargaHoraria);
+    }
+
+    @Override
+    public double calcularMensalidade() {
+        return super.calcularMensalidade() + 100; // Acréscimo para curso técnico
+    }
+
+    @Override
+    public void exibirInformacoes() {
+        super.exibirInformacoes();
+    }
+
+    @Override
+    public void emitirCertificado() {
+        System.out.println("Certificado Técnico: Conclusão do Curso Técnico em " + getNome());
+    }
+}
