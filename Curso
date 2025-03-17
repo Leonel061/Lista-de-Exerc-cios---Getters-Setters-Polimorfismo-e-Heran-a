@@ -1,0 +1,26 @@
+public class Curso extends Escola {
+    private int cargaHoraria;
+
+    public Curso(String nome, String endereco, int cargaHoraria) {
+        super(nome, endereco);
+        this.cargaHoraria = cargaHoraria;
+    }
+
+    public int getCargaHoraria() {
+        return cargaHoraria;
+    }
+
+    public void setCargaHoraria(int cargaHoraria) {
+        if (cargaHoraria > 0) {
+            this.cargaHoraria = cargaHoraria;
+        } else {
+            System.out.println("A carga horária deve ser maior que zero.");
+        }
+    }
+
+    public void exibirInformacoes() {
+        System.out.println("Curso: " + getNome());
+        System.out.println("Endereço: " + getEndereco());
+        System.out.println("Carga Horária: " + cargaHoraria + " horas.");
+    }
+}
